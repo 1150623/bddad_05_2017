@@ -1,3 +1,4 @@
+[EXAMPLE]
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/1150623/bddad_05_2017/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
