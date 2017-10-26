@@ -74,7 +74,7 @@ create table AutoEstrada(
 codAutoEstrada varchar(3),
 tipoPortagem number NOT NULL,
 descricao varchar(255),
-CONSTRAINT autEst_checkCod CHECK(regexp_like(codAutoEstrada, '([A-Z][0-9]{1,2}')),
+CONSTRAINT autEst_checkCod CHECK(regexp_like(codAutoEstrada, '([A-Z][0-9]{1,2})')),
 CONSTRAINT autEst_pk PRIMARY KEY (codAutoEstrada),
 CONSTRAINT autEst_fk_tipoPortagem FOREIGN KEY(tipoPortagem) REFERENCES TipoPortagem ON DELETE CASCADE
 )
