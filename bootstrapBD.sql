@@ -136,17 +136,13 @@ insert into Ligacao (CODAUTOESTRADA1, CODAUTOESTRADA2, QUILOMETRO1, QUILOMETRO2)
 
 
 --------------------------------
--- INSERT PORTAGEMTRADICIONAL --
+-- INSERT PORTAGEMTRADICIONAL --  A1 -> A5 ; A11 -> A15
 --------------------------------
 
 insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 1, 15, 'Portagem Tradicional A1 - Nó com A2');
 insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 2, 21, 'Portagem Tradicional A1 - Nó com A3');
 insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 3, 37, 'Portagem Tradicional A1 - Nó com A4');
 insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 4, 120, 'Portagem Tradicional A1 - Nó com A17');
-
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 1, 20, 'Portagem Tradicional A1 - Nó com A19');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 2, 31, 'Portagem Tradicional A13 - Nó com A17');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 3, 45, 'Portagem Tradicional A13 - Nó com A2');
 
 insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 1, 4, 'Portagem Tradicional A2 - Nó com A13');
 insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 2, 6, 'Portagem Tradicional A2 - Nó com A20');
@@ -164,6 +160,10 @@ insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO,
 
 insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A12', 1, 1, 'Portagem Tradicional A12 - Nó com A6');
 
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 1, 20, 'Portagem Tradicional A1 - Nó com A19');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 2, 31, 'Portagem Tradicional A13 - Nó com A17');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 3, 45, 'Portagem Tradicional A13 - Nó com A2');
+
 insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A14', 1, 74, 'Portagem Tradicional A14 - Nó com A2');
 insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A14', 2, 96, 'Portagem Tradicional A14 - Nó com A18');
 
@@ -172,7 +172,7 @@ insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO,
 
 
 ------------------------------
--- INSERT TARIFATRADICIONAL --
+-- INSERT TARIFATRADICIONAL --  A1 -> A5 ; A11 -> A15
 ------------------------------
 
 
