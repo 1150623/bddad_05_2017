@@ -86,7 +86,7 @@ create table Portico(
 codAutoEstrada varchar(3) NOT NULL,
 codPortico number NOT NULL,
 descricao varchar(255),
-CONSTRAINT port_pk PRIMARY KEY (codPortico),
+CONSTRAINT port_pk PRIMARY KEY (codPortico, codAutoEstrada),
 CONSTRAINT port_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrada ON DELETE CASCADE
 )
 
@@ -135,18 +135,18 @@ CONSTRAINT lppp_fk_passagemPortico FOREIGN KEY(nrPassagem) REFERENCES PassagemPo
 );
 
 
-
 -- tabela Taxa
 create table Taxa(
 codAutoEstrada varchar(3) NOT NULL,
-codPortico number NOT NULL,
+codPortico integer NOT NULL,
 classeVeiculo integer  NOT NULL,
 taxa float,
-CONSTRAINT tax_pk PRIMARY KEY (codAutoEstrada, codPortico),
+CONSTRAINT tax_pk PRIMARY KEY (codAutoEstrada, codPortico, classeVeiculo),
 CONSTRAINT tax_fk_classeVeiculo FOREIGN KEY(classeVeiculo) REFERENCES Classe ON DELETE CASCADE,
-CONSTRAINT tax_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrada ON DELETE CASCADE,
-CONSTRAINT tax_fk_portico FOREIGN KEY(codPortico) REFERENCES Portico ON DELETE CASCADE
+CONSTRAINT tax_fk_portico FOREIGN KEY(codPortico, codAutoEstrada) REFERENCES Portico ON DELETE CASCADE
 )
+
+
 
 
 -- tabela PortagemTradicional

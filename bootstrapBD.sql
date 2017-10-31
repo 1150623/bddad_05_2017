@@ -139,35 +139,35 @@ insert into Ligacao (CODAUTOESTRADA1, CODAUTOESTRADA2, QUILOMETRO1, QUILOMETRO2)
 -- INSERT PORTAGEMTRADICIONAL --  A1 -> A5 ; A11 -> A15
 --------------------------------
 
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 1, 15, 'Portagem Tradicional A1 - Nó com A2');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 2, 21, 'Portagem Tradicional A1 - Nó com A3');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 3, 37, 'Portagem Tradicional A1 - Nó com A4');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 4, 120, 'Portagem Tradicional A1 - Nó com A17');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 1, 15, 'Portagem Tradicional A1 - NO com A2');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 2, 21, 'Portagem Tradicional A1 - NO com A3');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 3, 37, 'Portagem Tradicional A1 - NO com A4');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A1', 4, 120, 'Portagem Tradicional A1 - NO com A17');
 
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 1, 4, 'Portagem Tradicional A2 - Nó com A13');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 2, 6, 'Portagem Tradicional A2 - Nó com A20');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 3, 7, 'Portagem Tradicional A2 - Nó com A14');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 4, 14, 'Portagem Tradicional A2 - Nó com A7');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 5, 15, 'Portagem Tradicional A2 - Nó com A11');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 6, 21, 'Portagem Tradicional A2 - Nó com A1');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 1, 4, 'Portagem Tradicional A2 - NO com A13');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 2, 6, 'Portagem Tradicional A2 - NO com A20');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 3, 7, 'Portagem Tradicional A2 - NO com A14');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 4, 14, 'Portagem Tradicional A2 - NO com A7');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 5, 15, 'Portagem Tradicional A2 - NO com A11');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A2', 6, 21, 'Portagem Tradicional A2 - NO com A1');
 
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A3', 1, 5, 'Portagem Tradicional A3 - Nó com A1');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A3', 1, 5, 'Portagem Tradicional A3 - NO com A1');
 
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A4', 1, 14, 'Portagem Tradicional A4 - Nó com A1');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A4', 1, 14, 'Portagem Tradicional A4 - NO com A1');
 
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A5', 1, 5, 'Portagem Tradicional A5 - Nó com A7');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A5', 2, 29, 'Portagem Tradicional A5 - Nó com A19');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A5', 1, 5, 'Portagem Tradicional A5 - NO com A7');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A5', 2, 29, 'Portagem Tradicional A5 - NO com A19');
 
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A12', 1, 1, 'Portagem Tradicional A12 - Nó com A6');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A12', 1, 1, 'Portagem Tradicional A12 - NO com A6');
 
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 1, 20, 'Portagem Tradicional A1 - Nó com A19');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 2, 31, 'Portagem Tradicional A13 - Nó com A17');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 3, 45, 'Portagem Tradicional A13 - Nó com A2');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 1, 20, 'Portagem Tradicional A1 - NO com A19');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 2, 31, 'Portagem Tradicional A13 - NO com A17');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A13', 3, 45, 'Portagem Tradicional A13 - NO com A2');
 
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A14', 1, 74, 'Portagem Tradicional A14 - Nó com A2');
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A14', 2, 96, 'Portagem Tradicional A14 - Nó com A18');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A14', 1, 74, 'Portagem Tradicional A14 - NO com A2');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A14', 2, 96, 'Portagem Tradicional A14 - NO com A18');
 
-insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A15', 1, 81, 'Portagem Tradicional A15 - Nó com A19');
+insert into PortagemTradicional (CODAUTOESTRADA, CODPORTTRADICIONAL, QUILOMETRO, DESCRICAO) values ('A15', 1, 81, 'Portagem Tradicional A15 - NO com A19');
 
 
 
@@ -237,8 +237,218 @@ insert into TARIFATRADICIONAL (CODAUTOESTRADA, CLASSEVEICULOID, TARIFA) values (
 insert into TARIFATRADICIONAL (CODAUTOESTRADA, CLASSEVEICULOID, TARIFA) values ('A15', 5, 2.0);
 
 
-*/
 
+
+------------------------------
+-- INSERT TARIFATRADICIONAL --  A6 -> A10 ; A16 -> A20
+------------------------------
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A6', 1, 'Portico 1 A6');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A6', 2, 'Portico 2 A6');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A6', 3, 'Portico 3 A6');
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A7', 1, 'Portico 1 A7');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A7', 2, 'Portico 2 A7');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A7', 3, 'Portico 3 A7');
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A8', 1, 'Portico 1 A8');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A8', 2, 'Portico 2 A8');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A8', 3, 'Portico 3 A8');
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A9', 1, 'Portico 1 A9');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A9', 2, 'Portico 2 A9');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A9', 3, 'Portico 3 A9');
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A10', 1, 'Portico 1 A10');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A10', 2, 'Portico 2 A10');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A10', 3, 'Portico 3 A10');
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A16', 1, 'Portico 1 A16');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A16', 2, 'Portico 2 A16');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A16', 3, 'Portico 3 A16');
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A17', 1, 'Portico 1 A17');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A17', 2, 'Portico 2 A17');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A17', 3, 'Portico 3 A17');
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A18', 1, 'Portico 1 A18');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A18', 2, 'Portico 2 A18');
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A19', 1, 'Portico 1 A19');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A19', 2, 'Portico 2 A19');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A19', 3, 'Portico 3 A19');
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A20', 1, 'Portico 1 A20');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A20', 2, 'Portico 2 A20');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A20', 3, 'Portico 3 A20');
+
+
+
+
+
+-----------------
+-- INSERT TAXA --  A6 -> A10 ; A16 -> A20
+-----------------
+
+
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 1,1, 1.955229);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 1,2, 2.924985);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 1,3, 3.206122);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 1,4, 4.179541);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 1,5, 5.144261);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 2,1, 1.533219);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 2,2, 6.545915);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 2,3, 7.117984);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 2,4, 5.601123);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 2,5, 3.765374);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 3,1, 2.722037);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 3,2, 3.468978);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 3,3, 3.661397);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 3,4, 5.490585);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A6', 3,5, 6.665456);
+
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 1,1, 1.963012);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 1,2, 2.510178);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 1,3, 3.729484);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 1,4, 4.459151);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 1,5, 5.696799);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 2,1, 3.615741);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 2,2, 2.998505);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 2,3, 7.309885);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 2,4, 7.423444);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 2,5, 2.669363);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 3,1, 2.017914);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 3,2, 3.678701);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 3,3, 3.058840);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 3,4, 4.263375);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A7', 3,5, 6.316629);
+
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 1,1, 1.966796);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 1,2, 2.974792);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 1,3, 3.445997);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 1,4, 4.364604);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 1,5, 5.658254);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 2,1, 6.938108);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 2,2, 6.655232);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 2,3, 4.941893);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 2,4, 8.311167);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 2,5, 3.058565);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 3,1, 1.674825);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 3,2, 3.780877);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 3,3, 4.406354);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 3,4, 4.639851);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A8', 3,5, 5.787683);
+
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 1,1, 1.968383);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 1,2, 2.222999);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 1,3, 3.168737);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 1,4, 4.114261);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 1,5, 5.694693);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 2,1, 6.442060);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 2,2, 3.773614);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 2,3, 8.365887);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 2,4, 8.685080);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 2,5, 3.064516);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 3,1, 1.530412);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 3,2, 3.823847);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 3,3, 4.026338);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 3,4, 4.798364);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A9', 3,5, 5.459731);
+
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 1,1, 1.971068);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 1,2, 2.079409);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 1,3, 3.888363);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 1,4, 4.941832);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 1,5, 5.193609);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 2,1, 1.855129);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 2,2, 7.161168);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 2,3, 5.893887);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 2,4, 6.315805);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 2,5, 3.262093);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 3,1, 1.286630);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 3,2, 3.896481);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 3,3, 4.510117);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 3,4, 4.065859);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A10', 3,5, 6.031281);
+
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 1,1, 1.974365);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 1,2, 2.903928);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 1,3, 3.879025);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 1,4, 4.175512);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 1,5, 5.581225);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 2,1, 1.582293);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 2,2, 7.968139);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 2,3, 6.205909);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 2,4, 4.086612);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 2,5, 3.836879);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 3,1, 2.988769);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 3,2, 3.985168);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 3,3, 3.101321);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 3,4, 5.392865);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A16', 3,5, 6.729850);
+
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 1,1, 1.976074);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 1,2, 2.480178);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 1,3, 3.146916);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 1,4, 4.659535);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 1,5, 5.932432);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 2,1, 1.805506);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 2,2, 5.656545);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 2,3, 3.093753);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 2,4, 7.483871);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 2,5, 4.405713);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 3,1, 2.835322);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 3,2, 2.030824);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 3,3, 4.072604);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 3,4, 4.561235);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A17', 3,5, 5.756371);
+
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A18', 1,1, 1.977447);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A18', 1,2, 2.072390);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A18', 1,3, 3.779321);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A18', 1,4, 4.940519);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A18', 1,5, 5.339274);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A18', 2,1, 5.871670);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A18', 2,2, 7.635243);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A18', 2,3, 7.589862);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A18', 2,4, 7.810907);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A18', 2,5, 3.285897);
+
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 1,1, 1.981231);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 1,2, 2.537004);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 1,3, 3.495834);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 1,4, 4.845942);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 1,5, 5.300760);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 2,1, 3.193853);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 2,2, 5.291605);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 2,3, 5.221869);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 2,4, 8.698812);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 2,5, 3.675100);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 3,1, 2.365886);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 3,2, 2.170599);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 3,3, 4.337565);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 3,4, 5.076449);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A19', 3,5, 6.190527);
+
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 1,1, 1.988403);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 1,2, 2.154088);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 1,3, 3.748161);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 1,4, 4.719443);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 1,5, 5.964629);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 2,1, 6.962279);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 2,2, 4.324778);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 2,3, 8.629932);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 2,4, 4.380688);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 2,5, 2.201880);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 3,1, 1.715903);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 3,2, 2.364208);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 3,3, 3.627522);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 3,4, 5.789849);
+insert into TAXA(CODAUTOESTRADA, codPortico, classeVeiculo, taxa) values('A20', 3,5, 5.714622);
+
+
+
+*/
 
 
 
