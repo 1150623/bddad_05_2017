@@ -1,30 +1,29 @@
-----------------
--- RESTRIÇÕES --
-----------------
 
-CREATE TRIGGER restringir_portagemtradicional
-BEFORE INSERT on PortagemTradicional
-FOR EACH ROW		
-DECLARE TIPOPORTAGEM integer;
+create or replace TRIGGER restringir_portico
+BEFORE INSERT on Portico
+FOR EACH ROW
+DECLARE tipo  AUTOESTRADA.TIPOPORTAGEM%TYPE;		
 BEGIN
 
-SELECT TIPOPORTAGEM FROM AUTOESTRADA WHERE CODAUTOESTRADA = :new.CODAUTOESTRADA
+SELECT TIPOPORTAGEM into tipo FROM AUTOESTRADA WHERE CODAUTOESTRADA = :new.CODAUTOESTRADA;
 
-if(TIPOPORTAGEM = 2){
-	NEGA
-}		
+if(tipo = 1) then
+		RAISE_APPLICATION_ERROR( -20001, 
+                             'Tipo portagem não corresponde' );
+	end if;
 END;
 
 
-CREATE TRIGGER restringir_portico
-BEFORE INSERT on Portico
-FOR EACH ROW
-DECLARE TIPOPORTAGEM integer;		
+create or replace TRIGGER restringir_portagemtradicional
+BEFORE INSERT on PortagemTradicional
+FOR EACH ROW		
+DECLARE tipo AUTOESTRADA.TIPOPORTAGEM%TYPE;
 BEGIN
 
-SELECT TIPOPORTAGEM FROM AUTOESTRADA WHERE CODAUTOESTRADA = :new.CODAUTOESTRADA
+SELECT TIPOPORTAGEM into tipo FROM AUTOESTRADA WHERE CODAUTOESTRADA = :new.CODAUTOESTRADA;
 
-if(TIPOPORTAGEM = 1){
-	NEGA
-}		
+if(tipo = 2)	then
+		RAISE_APPLICATION_ERROR( -20001, 
+                             'Tipo portagem não corresponde' );
+		end if;
 END;
