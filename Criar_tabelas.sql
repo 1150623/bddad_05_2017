@@ -112,8 +112,8 @@ codAutoEstrada varchar(3) NOT NULL,
 matriculaVeiculo varchar(8) NOT NULL,
 dataPassagem timeStamp,
 codPortico number NOT NULL,
+estadoDispositivo integer,
 CONSTRAINT pass_pk PRIMARY KEY (nrPassagem),
-CONSTRAINT pass_fk_veiculo FOREIGN KEY(matriculaVeiculo) REFERENCES VEICULO ON DELETE CASCADE,
 CONSTRAINT pass_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrada ON DELETE CASCADE);
 
 
@@ -167,8 +167,8 @@ matriculaVeiculo varchar(8) NOT NULL,
 codAutoEstrada varchar(3) NOT NULL,
 codPortTradicional number NOT NULL,
 dataReg TIMESTAMP,
+estadoDispositivo integer,
 CONSTRAINT regEntr_pk PRIMARY KEY (nrRegistoEntrada),
-CONSTRAINT regEntr_fk_veiculo FOREIGN KEY(matriculaVeiculo) REFERENCES Veiculo ON DELETE CASCADE,
 CONSTRAINT regEntr_fk_portagemTradicional FOREIGN KEY(codAutoEstrada, codPortTradicional) REFERENCES PortagemTradicional ON DELETE CASCADE
 );
 
@@ -183,9 +183,9 @@ codPortTradicional number NOT NULL,
 codAutoEstrada varchar(3) NOT NULL,
 matriculaVeiculo varchar(8) NOT NULL,
 data TIMESTAMP,
+estadoDispositivo integer,
 CONSTRAINT regSaida_pk PRIMARY KEY (nrRegistoSaida),
 CONSTRAINT regSaida_fk_registoEntrada FOREIGN KEY(nrRegistoEntrada) REFERENCES RegistoEntrada ON DELETE CASCADE,
-CONSTRAINT regSaida_fk_veiculo FOREIGN KEY(matriculaVeiculo) REFERENCES Veiculo ON DELETE CASCADE,
 CONSTRAINT regSaida_fk_autoestrada FOREIGN KEY(codAutoEstrada, codPortTradicional) REFERENCES PortagemTradicional ON DELETE CASCADE
 )
 
@@ -257,8 +257,3 @@ CONSTRAINT cobCTT_pk PRIMARY KEY (matriculaVeiculo, nrPassagem),
 CONSTRAINT cobCTT_fk_veiculo FOREIGN KEY(matriculaVeiculo) REFERENCES Veiculo ON DELETE CASCADE,
 CONSTRAINT cobCTT_fk_autoestrada2 FOREIGN KEY(nrPassagem) REFERENCES PassagemPortico ON DELETE CASCADE
 )
-
-
--- alterações às Tabelas
-
-ALTER TABLE tipoportagem ADD CONSTRAINT desc_uni UNIQUE (descricao);

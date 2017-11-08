@@ -24,42 +24,54 @@ select c.NOME, c.NIF, d.MATRICULAVEICULO from Dispositivo d, Cliente c where d.C
 --+-------------------+ pórticos, entre o período de 01/01/2017 a 10/10/2017.                                         -+
 --+-------------------+------------------------------------------------------------------------------------------------+
 
-select SUM(COUNT(*)) from Portagemtradicional pt, Dispositivo d, RegistoEntrada re where
-                                                                                --Joins
-                                                                                pt.CODAUTOESTRADA = ae.CodAUTOESTRADA
-                                                                                and pt.CODPORTTRADICIONAL = re.CODPORTTRADICIONAL and pt.CODAUTOESTRADA = re.CODAUTOESTRADA and d.MATRICULAVEICULO = re.MATRICULAVEICULO
-                                                                                --Restrição Dispositivo Inativo
-                                                                                and d.ESTADODISPOSITIVO = 0 
-                                                                                --Restrição Ano
-                                                                                and extract(year from re.DATAREG) = 2017 
-                                                                                --Restrição Dia e Mês
-                                                                                and (extract(month from re.DATAREG) < 10 or (extract(month from re.DATAREG) = 10 and extract(day from re.DATAREG) < 10));
-                              
+
+-- Passagens num portico
+select COUNT(*) from Autoestrada ae, PassagemPortico pp where ae.codautoestrada = pp.codautoestrada             -- and dispositivo inativo
+                                                                                                                and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= pp.datapassagem
+                                                                                                                and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= pp.datapassagem;
+                                                          
+-- Passagens numa Portagem Tradicional
+select COUNT(*) from Autoestrada ae, RegistoEntrada re where ae.codautoestrada = re.codautoestrada              -- and dispositivo inativo
+                                                                                                                and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= re.dataReg
+                                                                                                                and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= re.dataReg;
 
 
-select ae.codautoestrada from Autoestrada ae, AutoEstrada ae1 where (select Count(*) from Portagemtradicional pt, Dispositivo d, RegistoEntrada re where
-                                                                                --Joins
-                                                                                pt.CODAUTOESTRADA = ae.CodAUTOESTRADA
-                                                                                and pt.CODPORTTRADICIONAL = re.CODPORTTRADICIONAL and pt.CODAUTOESTRADA = re.CODAUTOESTRADA and d.MATRICULAVEICULO = re.MATRICULAVEICULO
-                                                                                --Restrição Dispositivo Inativo
-                                                                                and d.ESTADODISPOSITIVO = 0 
-                                                                                --Restrição Ano
-                                                                                and extract(year from re.DATAREG) = 2017 
-                                                                                --Restrição Dia e Mês
-                                                                                and (extract(month from re.DATAREG) < 10 or (extract(month from re.DATAREG) = 10 and extract(day from re.DATAREG) < 10)) group by pt.CODAUTOESTRADA having soma = SUM(COUNT(*))) 
-                                                                                
-                                                                                > 
-                                                                                
-                                                                                
-                                                                                (select SUM(COUNT(*)) from Portagemtradicional pt, Dispositivo d, RegistoEntrada re where
-                                                                                --Joins
-                                                                                pt.CODAUTOESTRADA = ae1.CodAUTOESTRADA
-                                                                                and pt.CODPORTTRADICIONAL = re.CODPORTTRADICIONAL and pt.CODAUTOESTRADA = re.CODAUTOESTRADA and d.MATRICULAVEICULO = re.MATRICULAVEICULO
-                                                                                --Restrição Dispositivo Inativo
-                                                                                and d.ESTADODISPOSITIVO = 0 
-                                                                                --Restrição Ano
-                                                                                and extract(year from re.DATAREG) = 2017 
-                                                                                --Restrição Dia e Mês
-                                                                                and (extract(month from re.DATAREG) < 10 or (extract(month from re.DATAREG) = 10 and extract(day from re.DATAREG) < 10))group by pt.CODAUTOESTRADA having soma = SUM(COUNT(*)));
-                              
+select ae1.codautoestrada from Autoestrada ae1 where (select COUNT(*) from Autoestrada ae, RegistoEntrada re where ae.codAutoestrada = ae1.codautoestrada and ae.codautoestrada = re.codautoestrada   
+                                                                                                                and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= re.dataReg
+                                                                                                                and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= re.dataReg) > (select COUNT(*) from Autoestrada ae, PassagemPortico pp where ae.codAutoestrada = ae1.codautoestrada and ae.codautoestrada = pp.codautoestrada  and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= pp.datapassagem
+                                                                                                                and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= pp.datapassagem);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
