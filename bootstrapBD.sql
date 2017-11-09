@@ -459,8 +459,8 @@ insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matricula
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A6', 2, TO_TIMESTAMP('2017-05-02 21:32:00', 'YYYY-MM-DD HH24:MI:SS'), '64-AZ-24', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A6', 2, TO_TIMESTAMP('2017-01-02 12:41:11', 'YYYY-MM-DD HH24:MI:SS'),'32-AZ-24', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A6', 3, TO_TIMESTAMP('2017-01-02 12:53:59', 'YYYY-MM-DD HH24:MI:SS'),'32-AZ-24', 1);
-insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A7', 1, TO_TIMESTAMP('2017-01-02 9:12:52', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
-insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A7', 2, TO_TIMESTAMP('2017-01-02 11:55:55', 'YYYY-MM-DD HH24:MI:SS'), '32-PO-14', 1);
+insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A7', 1, TO_TIMESTAMP('2016-01-02 9:12:52', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
+insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A7', 2, TO_TIMESTAMP('2016-01-02 11:55:55', 'YYYY-MM-DD HH24:MI:SS'), '32-PO-14', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A8', 1, TO_TIMESTAMP('2017-01-02 01:02:03', 'YYYY-MM-DD HH24:MI:SS'), '32-AZ-24', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A8', 1, TO_TIMESTAMP('2017-01-02 02:14:16', 'YYYY-MM-DD HH24:MI:SS'), '00-EL-85', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A8', 2, TO_TIMESTAMP('2017-01-02 05:02:32', 'YYYY-MM-DD HH24:MI:SS'), '00-KK-00', 1);
@@ -471,29 +471,29 @@ insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matricula
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A9', 3, TO_TIMESTAMP('2017-01-02 11:11:11', 'YYYY-MM-DD HH24:MI:SS'), '11-BB-22', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A10', 1, TO_TIMESTAMP('2016-11-02 00:33:45', 'YYYY-MM-DD HH24:MI:SS'), '50-AZ-31', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A10', 1, TO_TIMESTAMP('2017-01-02 6:14:30', 'YYYY-MM-DD HH24:MI:SS'), '64-AZ-24', 1);
-insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A10', 1, TO_TIMESTAMP('2017-01-02 23:37:55', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
+insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A10', 1, TO_TIMESTAMP('2016-10-02 23:37:55', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A10', 2, TO_TIMESTAMP('2017-01-02 13:56:12', 'YYYY-MM-DD HH24:MI:SS'), '32-AZ-24', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A10', 2, TO_TIMESTAMP('2017-01-02 18:31:50', 'YYYY-MM-DD HH24:MI:SS'), '64-AZ-24', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A10', 3, TO_TIMESTAMP('2017-01-02 19:20:23', 'YYYY-MM-DD HH24:MI:SS'), '00-EL-85', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A16', 1, TO_TIMESTAMP('2016-01-15 14:33:58', 'YYYY-MM-DD HH24:MI:SS'), '50-AZ-31', 1);
-insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A16', 1, TO_TIMESTAMP('2017-01-02 16:27:27', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
+insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A16', 1, TO_TIMESTAMP('2016-11-02 16:27:27', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A16', 3, TO_TIMESTAMP('2017-01-02 12:39:30', 'YYYY-MM-DD HH24:MI:SS'), '99-AA-99', 1);
-insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A17', 1, TO_TIMESTAMP('2017-01-02 12:31:45', 'YYYY-MM-DD HH24:MI:SS'), '32-PO-14', 1);
+insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A17', 1, TO_TIMESTAMP('2016-01-23 12:31:45', 'YYYY-MM-DD HH24:MI:SS'), '32-PO-14', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A17', 1, TO_TIMESTAMP('2017-01-02 13:33:15', 'YYYY-MM-DD HH24:MI:SS'), '00-KK-00', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A17', 2, TO_TIMESTAMP('2017-01-02 17:59:00', 'YYYY-MM-DD HH24:MI:SS'), '00-KK-00', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A18', 1, TO_TIMESTAMP('2017-01-02 18:00:50', 'YYYY-MM-DD HH24:MI:SS'), '32-MN-32', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A18', 1, TO_TIMESTAMP('2017-01-02 19:14:14', 'YYYY-MM-DD HH24:MI:SS'), '64-AZ-24', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A18', 1, TO_TIMESTAMP('2017-01-02 16:16:16', 'YYYY-MM-DD HH24:MI:SS'), '32-AZ-24', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A18', 2, TO_TIMESTAMP('2017-01-02 16:32:55', 'YYYY-MM-DD HH24:MI:SS'), '11-BB-22', 1);
-insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A19', 1, TO_TIMESTAMP('2017-01-02 17:24:26', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
+insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A19', 1, TO_TIMESTAMP('2016-01-10 17:24:26', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A19', 1, TO_TIMESTAMP('2017-01-02 12:58:20', 'YYYY-MM-DD HH24:MI:SS'), '00-EL-85', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A19', 1, TO_TIMESTAMP('2016-01-01 17:07:06', 'YYYY-MM-DD HH24:MI:SS'), '50-AZ-31', 1);
-insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A19', 3, TO_TIMESTAMP('2017-01-02 08:08:08', 'YYYY-MM-DD HH24:MI:SS'), '32-PO-14', 1);
+insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A19', 3, TO_TIMESTAMP('2016-06-02 08:08:08', 'YYYY-MM-DD HH24:MI:SS'), '32-PO-14', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A20', 1, TO_TIMESTAMP('2017-01-02 14:10:51', 'YYYY-MM-DD HH24:MI:SS'), '55-ZZ-77', 1);
-insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A20', 1, TO_TIMESTAMP('2017-01-02 16:12:10', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
+insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A20', 1, TO_TIMESTAMP('2016-12-24 16:12:10', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A20', 2, TO_TIMESTAMP('2017-01-02 12:32:55', 'YYYY-MM-DD HH24:MI:SS'), 'AZ-24-12', 1);
-insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A20', 2, TO_TIMESTAMP('2017-01-02 12:40:15', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
-insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A20', 3, TO_TIMESTAMP('2017-01-02 22:39:14', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
+insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A20', 2, TO_TIMESTAMP('2017-09-06 12:40:15', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
+insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A20', 3, TO_TIMESTAMP('2017-07-05 22:39:14', 'YYYY-MM-DD HH24:MI:SS'), '46-OP-85', 1);
 insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matriculaveiculo, estadoDispositivo) values('A20', 3, TO_TIMESTAMP('2017-01-02 17:51:02', 'YYYY-MM-DD HH24:MI:SS'), '11-BB-22', 1);
 
 
