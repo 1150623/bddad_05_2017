@@ -210,7 +210,7 @@ CONSTRAINT pagPortTrad_fk_regMensal FOREIGN KEY(nrSerieDispositivo) REFERENCES D
 create table CobrancaMensal(
 idCobrancaMensal integer GENERATED ALWAYS AS IDENTITY,
 clienteNif numeric(9) NOT NULL,
-valorTotal numeric,
+valorTotal float,
 dataEmissao TIMESTAMP,
 situacaoPagamento numeric(1),
 CONSTRAINT cobMens_pk PRIMARY KEY (idCobrancaMensal, clienteNif),

@@ -33,14 +33,14 @@ insert into Veiculo (MATRICULA, CLASSEVEICULO) values ('47-HH-68',5);
 -- INSERT CLIENTES --
 ---------------------
 
-insert into Cliente (NIF, MORADA, NOME) values (123456789, 'Rua 1','Tiago');
-insert into Cliente (NIF, MORADA, NOME) values (159753698, 'Rua 2','Ana');
-insert into Cliente (NIF, MORADA, NOME) values (958412587, 'Rua 3','Maria');
-insert into Cliente (NIF, MORADA, NOME) values (658523658, 'Rua 4','Rodrigo');
-insert into Cliente (NIF, MORADA, NOME) values (424252586, 'Rua 5','Guilherme');
-insert into Cliente (NIF, MORADA, NOME) values (956485231, 'Rua 6','Pedro');
-insert into Cliente (NIF, MORADA, NOME) values (123569874, 'Rua 7','Joao');
-insert into Cliente (NIF, MORADA, NOME) values (987654321, 'Rua 8','Joaquim');
+insert into Cliente (NIF, MORADA, NOME, TIPOCLIENTE, PONTUACAOACUMULADA, PONTUACAOSALDO) values (123456789, 'Rua 1','Tiago', 'Gold', 3120, 2696);
+insert into Cliente (NIF, MORADA, NOME, TIPOCLIENTE, PONTUACAOACUMULADA, PONTUACAOSALDO) values (159753698, 'Rua 2','Ana', 'Gold', 1564, 1231);
+insert into Cliente (NIF, MORADA, NOME, TIPOCLIENTE, PONTUACAOACUMULADA, PONTUACAOSALDO) values (958412587, 'Rua 3','Maria', 'Gold', 3560, 3560);
+insert into Cliente (NIF, MORADA, NOME, TIPOCLIENTE, PONTUACAOACUMULADA, PONTUACAOSALDO) values (658523658, 'Rua 4','Rodrigo', 'Gold', 1251, 1000);
+insert into Cliente (NIF, MORADA, NOME, TIPOCLIENTE, PONTUACAOACUMULADA, PONTUACAOSALDO) values (424252586, 'Rua 5','Guilherme', 'Silver', 4503, 3250);
+insert into Cliente (NIF, MORADA, NOME, TIPOCLIENTE, PONTUACAOACUMULADA, PONTUACAOSALDO) values (956485231, 'Rua 6','Pedro', 'Silver', 8651, 2300);
+insert into Cliente (NIF, MORADA, NOME, TIPOCLIENTE, PONTUACAOACUMULADA, PONTUACAOSALDO) values (123569874, 'Rua 7','Joao', 'Silver', 568, 113);
+insert into Cliente (NIF, MORADA, NOME, TIPOCLIENTE, PONTUACAOACUMULADA, PONTUACAOSALDO) values (987654321, 'Rua 8','Joaquim', 'Silver', 2000, 1850);
 -------------------------
 -- INSERT DISPOSITIVOS --
 -------------------------
