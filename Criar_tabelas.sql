@@ -64,7 +64,7 @@ create table TipoPortagem(
 idTipo  integer GENERATED ALWAYS AS IDENTITY,
 descricao varchar(30),
 CONSTRAINT tport_pk PRIMARY KEY (idTipo)
-)
+);
 
 
 
@@ -77,7 +77,7 @@ descricao varchar(255),
 CONSTRAINT autEst_checkCod CHECK(regexp_like(codAutoEstrada, '([A-Z][0-9]{1,2})')),
 CONSTRAINT autEst_pk PRIMARY KEY (codAutoEstrada),
 CONSTRAINT autEst_fk_tipoPortagem FOREIGN KEY(tipoPortagem) REFERENCES TipoPortagem ON DELETE CASCADE
-)
+);
 
 
 
@@ -88,7 +88,7 @@ codPortico number NOT NULL,
 descricao varchar(255),
 CONSTRAINT port_pk PRIMARY KEY (codPortico, codAutoEstrada),
 CONSTRAINT port_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrada ON DELETE CASCADE
-)
+);
 
 
 --tabela TarifaTradicional
@@ -99,7 +99,7 @@ tarifa float,
 CONSTRAINT tarTrad_pk PRIMARY KEY (codAutoEstrada, classeVeiculoId),
 CONSTRAINT tarTrad_fk_classe FOREIGN KEY(classeVeiculoId) REFERENCES Classe ON DELETE CASCADE,
 CONSTRAINT tarTrad_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrada ON DELETE CASCADE
-)
+);
 
 
 
@@ -114,7 +114,8 @@ dataPassagem timeStamp,
 codPortico number NOT NULL,
 estadoDispositivo integer,
 CONSTRAINT pass_pk PRIMARY KEY (nrPassagem),
-CONSTRAINT pass_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrada ON DELETE CASCADE);
+CONSTRAINT pass_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrada ON DELETE CASCADE
+);
 
 
 
@@ -142,7 +143,7 @@ taxa float,
 CONSTRAINT tax_pk PRIMARY KEY (codAutoEstrada, codPortico, classeVeiculo),
 CONSTRAINT tax_fk_classeVeiculo FOREIGN KEY(classeVeiculo) REFERENCES Classe ON DELETE CASCADE,
 CONSTRAINT tax_fk_portico FOREIGN KEY(codPortico, codAutoEstrada) REFERENCES Portico ON DELETE CASCADE
-)
+);
 
 
 
@@ -187,7 +188,7 @@ estadoDispositivo integer,
 CONSTRAINT regSaida_pk PRIMARY KEY (nrRegistoSaida),
 CONSTRAINT regSaida_fk_registoEntrada FOREIGN KEY(nrRegistoEntrada) REFERENCES RegistoEntrada ON DELETE CASCADE,
 CONSTRAINT regSaida_fk_autoestrada FOREIGN KEY(codAutoEstrada, codPortTradicional) REFERENCES PortagemTradicional ON DELETE CASCADE
-)
+);
 
 
 			
@@ -200,7 +201,7 @@ valor float,
 CONSTRAINT pagPortTrad_pk PRIMARY KEY (idPagamento),
 CONSTRAINT pagPortTrad_fk_regSaida FOREIGN KEY(nrRegSaida) REFERENCES RegistoSaida ON DELETE CASCADE,
 CONSTRAINT pagPortTrad_fk_regMensal FOREIGN KEY(nrSerieDispositivo) REFERENCES Dispositivo ON DELETE CASCADE
-)
+);
 
 
 
@@ -211,10 +212,10 @@ idCobrancaMensal integer GENERATED ALWAYS AS IDENTITY,
 clienteNif numeric(9) NOT NULL,
 valorTotal numeric,
 dataEmissao TIMESTAMP,
-situacaoPagamento varchar(20),
+situacaoPagamento numeric(1),
 CONSTRAINT cobMens_pk PRIMARY KEY (idCobrancaMensal, clienteNif),
 CONSTRAINT cobMens_fk_cliente FOREIGN KEY(clienteNif) REFERENCES Cliente ON DELETE CASCADE
-)
+);
 
 
 
@@ -229,7 +230,7 @@ quilometro2 numeric,
 CONSTRAINT Lig_pk PRIMARY KEY (nrLigacao),
 CONSTRAINT Lig_fk_autoestrada1 FOREIGN KEY(codAutoEstrada1) REFERENCES AutoEstrada ON DELETE CASCADE,
 CONSTRAINT Lig_fk_autoestrada2 FOREIGN KEY(codAutoEstrada2) REFERENCES AutoEstrada ON DELETE CASCADE
-)
+);
 
 			
 		
@@ -239,10 +240,11 @@ create table CobrancaFinancas(
 matriculaVeiculo varchar(8) NOT NULL,
 nrRegSaida integer NOT NULL,
 valor float NOT NULL,
+situacaoPagamento numeric(1),
 CONSTRAINT cobFin_pk PRIMARY KEY (matriculaVeiculo, nrRegSaida),
 CONSTRAINT cobFin_fk_veiculo FOREIGN KEY(matriculaVeiculo) REFERENCES Veiculo ON DELETE CASCADE,
 CONSTRAINT cobFin_fk_registoSaida FOREIGN KEY(nrRegSaida) REFERENCES RegistoSaida ON DELETE CASCADE
-)
+);
 
 
 	
@@ -253,7 +255,8 @@ matriculaVeiculo varchar(8) NOT NULL,
 nrPassagem integer NOT NULL,
 dataEmissao TIMESTAMP,
 valorCobranca float NOT NULL,
+situacaoPagamento numeric(1),
 CONSTRAINT cobCTT_pk PRIMARY KEY (matriculaVeiculo, nrPassagem),
 CONSTRAINT cobCTT_fk_veiculo FOREIGN KEY(matriculaVeiculo) REFERENCES Veiculo ON DELETE CASCADE,
 CONSTRAINT cobCTT_fk_autoestrada2 FOREIGN KEY(nrPassagem) REFERENCES PassagemPortico ON DELETE CASCADE
-)
+);

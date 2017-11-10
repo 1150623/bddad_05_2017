@@ -33,6 +33,8 @@ select c.nome, c.NIF from Cliente c where c.NIF in (select c.NIF
                                                                                                       from RegistoEntrada re 
                                                                                                       where extract(year from re.DATAREG) = 2016));
 
+
+
 --+-------------------+------------------------------------------------------------------------------------------------+
 --+-------------------+ Indique qual a autoestrada, com o tipo de portagem tradicional, que obteve o maior número de  -+
 --+-- Exercício (g) --+ passagens com o dispositivo inativo, do que qualquer autoestrada com  portagens do tipo       -+
@@ -40,28 +42,43 @@ select c.nome, c.NIF from Cliente c where c.NIF in (select c.NIF
 --+-------------------+------------------------------------------------------------------------------------------------+
 
 
--- Passagens num portico
-select COUNT(*) from Autoestrada ae, PassagemPortico pp where ae.codautoestrada = pp.codautoestrada             -- and dispositivo inativo
-                                                                                                                and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= pp.datapassagem
-                                                                                                                and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= pp.datapassagem;
-                                                          
--- Passagens numa Portagem Tradicional
-select COUNT(*) from Autoestrada ae, RegistoEntrada re where ae.codautoestrada = re.codautoestrada              -- and dispositivo inativo
-                                                                                                                and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= re.dataReg
-                                                                                                                and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= re.dataReg;
 
 
-select ae1.codautoestrada from Autoestrada ae1 where (select COUNT(*) from Autoestrada ae, RegistoEntrada re where ae.codAutoestrada = ae1.codautoestrada and ae.codautoestrada = re.codautoestrada   
-                                                                                                                and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= re.dataReg
-                                                                                                                and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= re.dataReg) > (select COUNT(*) from Autoestrada ae, PassagemPortico pp where ae.codAutoestrada = ae1.codautoestrada and ae.codautoestrada = pp.codautoestrada  and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= pp.datapassagem
-                                                                                                                and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= pp.datapassagem);
-
-
-
-
-
-
-
+select distinct ae1.codautoestrada 
+from Autoestrada ae1 
+where (select COUNT(*) 
+       from RegistoEntrada re 
+      where ae1.codautoestrada = re.codautoestrada              
+                  and re.ESTADODISPOSITIVO = 0
+                  and re.matriculaveiculo in(select v.matricula from veiculo V)
+                  and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= re.dataReg
+                  and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= re.dataReg
+      ) > any (select COUNT(*) 
+                  from RegistoEntrada re 
+                  where ae1.codautoestrada <> re.codautoestrada              
+                    and re.ESTADODISPOSITIVO = 0
+                    and re.matriculaveiculo in(select v.matricula from veiculo V)
+                    and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= re.dataReg
+                    and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= re.dataReg
+                    group by re.codautoestrada
+      ) and (select COUNT(*) 
+              from RegistoEntrada re 
+              where ae1.codautoestrada = re.codautoestrada              
+                    and re.ESTADODISPOSITIVO = 0
+                    and re.matriculaveiculo in(select v.matricula from veiculo V)
+                    and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= re.dataReg
+                    and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= re.dataReg
+              ) > any(select COUNT(codautoestrada)
+                      from PassagemPortico pp    
+                      where pp.ESTADODISPOSITIVO = 0
+                          and pp.matriculaveiculo in(select v.matricula from veiculo V)
+                          and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= pp.datapassagem
+                          and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= pp.datapassagem
+                          group by codautoestrada                        
+);
+                                                                                                                                                                                       
+                                                    
+                                      
 
 
 
