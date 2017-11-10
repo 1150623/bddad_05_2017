@@ -1,4 +1,10 @@
 
+-- tabela TipoCliente
+CREATE TABLE TipoCliente
+(
+tipoCliente varchar(6) NOT NULL,
+CONSTRAINT tipoCliente_pk PRIMARY KEY (tipoCliente)
+);
 
 -- tabela Cliente
 
@@ -6,7 +12,11 @@ create table Cliente(
 nif numeric(9) NOT NULL,
 nome varchar(255),
 morada varchar(255),
-CONSTRAINT cliente_pk PRIMARY KEY (nif)
+pontuacaoAcumulada integer,
+pontuacaoSaldo integer,
+tipoCliente varchar(6) NOT NULL,
+CONSTRAINT cliente_pk PRIMARY KEY (nif),
+CONSTRAINT tipoCliente_fk FOREIGN KEY (tipoCliente) REFERENCES TipoCliente
 );
 
 
@@ -260,3 +270,6 @@ CONSTRAINT cobCTT_pk PRIMARY KEY (matriculaVeiculo, nrPassagem),
 CONSTRAINT cobCTT_fk_veiculo FOREIGN KEY(matriculaVeiculo) REFERENCES Veiculo ON DELETE CASCADE,
 CONSTRAINT cobCTT_fk_autoestrada2 FOREIGN KEY(nrPassagem) REFERENCES PassagemPortico ON DELETE CASCADE
 );
+
+
+
