@@ -1,9 +1,25 @@
 
---- Select C---
+--+-------------------+------------------------------------------------------------------------------------------------+
+--+-------------------+                                                                                               -+
+--+-- Exercício (c) --+ Liste os veículos(dispositivo, matricula) que circularam em todas as autoestradas com         -+
+--+-------------------+ portagens tradicionais.                                                                       -+
+--+-------------------+------------------------------------------------------------------------------------------------+
 
-Select dv.MATRICULAVEICULO, dv.NRSERIEDISPOSITIVO from dispositivo_veiculo dv where dv.MATRICULAVEICULO in (Select Re.MATRICULAVEICULO from RegistoEntrada Re, autoestrada A where Re.CODAUTOESTRADA = A.CODAUTOESTRADA AND A.tipoportagem = 2);  
+SELECT dv.MATRICULAVEICULO, dv.NRSERIEDISPOSITIVO 
+FROM dispositivo_veiculo dv 
+WHERE dv.MATRICULAVEICULO in (Select Re.MATRICULAVEICULO 
+							from RegistoEntrada Re, autoestrada A 
+							where Re.CODAUTOESTRADA = A.CODAUTOESTRADA 
+								AND A.tipoportagem = 2);  
+								
+								
 
---- Select F---
+--+-------------------+------------------------------------------------------------------------------------------------+
+--+-------------------+ Liste os veículos (dispositivo, matricula) da classe 1 que em 2016 circularam em pelo 		  -+
+--+-- Exercício (f) --+ menos uma autoestrada de pórticos, passando em mais do que um pórtico com taxa                -+
+--+-------------------+ superior a 2 €.			                                                                      -+
+--+-------------------+------------------------------------------------------------------------------------------------+
+
 --------------------------
 --Inserts Pórticos em 2016
 --------------------------
@@ -30,9 +46,6 @@ insert into PASSAGEMPORTICO (CODAUTOESTRADA, CODPORTICO, dataPASSAGEM, matricula
 
 --Matriculas mostradas: "69-PP-85" e "64-AZ-24"
 
-----------
---Select F
-----------
 
 SELECT DV.MATRICULAVEICULO, DV.NRSERIEDISPOSITIVO FROM DISPOSITIVO_VEICULO DV, VEICULO V
 WHERE DV.MATRICULAVEICULO = V.MATRICULA AND V.CLASSEVEICULO = 1 AND DV.MATRICULAVEICULO IN 
@@ -47,26 +60,29 @@ WHERE DV.MATRICULAVEICULO = V.MATRICULA AND V.CLASSEVEICULO = 1 AND DV.MATRICULA
     )
   );
 
-----------
---Select I
-----------
---Correção Enunciado:
-"Para as autoestradas do tipo pórticos, obtenha a lista contendo o código da autoestrada, a percentagem de passagens de veículos de classe 1, por dia. Devem ser excluídas as autoestradas, em que a percentagem  seja inferior a 10%"
 
-select autoestrada, percentagemPassagensClasse1, contaDias from 
-(select PP.CODAUTOESTRADA autoestrada,
-      COUNT(to_char(PP.DATAPASSAGEM,'DD-MM-YYYY')) contaDias, 
-      COUNT(PP.NRPASSAGEM) contaPassagens, 
-      SUM(CASE when V.CLASSEVEICULO = 1 then 1 else 0 end) passagensClasse1,
-      (100*(SUM(CASE when V.CLASSEVEICULO = 1 then 1 else 0 end))/COUNT(PP.NRPASSAGEM)) percentagemPassagensClasse1
-  from PASSAGEMPORTICO PP, AUTOESTRADA A, VEICULO V
- where A.CODAUTOESTRADA = PP.CODAUTOESTRADA
-   and A.TIPOPORTAGEM = 1 
-   and V.MATRICULA = PP.MATRICULAVEICULO
+  
+--+-------------------+------------------------------------------------------------------------------------------------+
+--+-------------------+ Para as autoestradas do tipo pórticos, obtenha a lista contendo o código da autoestrada, a    -+
+--+-- Exercício (i) --+ percentagem de passagens de veículos de classe 1, por dia. Devem ser  excluídas as 			  -+
+--+-------------------+ autoestradas, em que a percentagem  seja inferior a 10%.                                       -+
+--+-------------------+------------------------------------------------------------------------------------------------+
+  
+  
+select autoestrada, percentagemPassagensClasse1, contaDias 
+from (select PP.CODAUTOESTRADA autoestrada,
+			COUNT(to_char(PP.DATAPASSAGEM,'DD-MM-YYYY')) contaDias, 
+			COUNT(PP.NRPASSAGEM) contaPassagens, 
+			SUM(CASE when V.CLASSEVEICULO = 1 then 1 else 0 end) passagensClasse1,
+			(100*(SUM(CASE when V.CLASSEVEICULO = 1 then 1 else 0 end))/COUNT(PP.NRPASSAGEM)) percentagemPassagensClasse1
+from PASSAGEMPORTICO PP, AUTOESTRADA A, VEICULO V
+where A.CODAUTOESTRADA = PP.CODAUTOESTRADA
+		and A.TIPOPORTAGEM = 1 
+		and V.MATRICULA = PP.MATRICULAVEICULO
    -- and VEI.CLASSE_VEICULO_ID = 1 --veículo classe 1
- group by PP.CODAUTOESTRADA
- having ((100*(SUM(CASE when V.CLASSEVEICULO = 1 then 1 else 0 end))/COUNT(PP.NRPASSAGEM)) > 10))
- order by percentagemPassagensClasse1 desc;
+		group by PP.CODAUTOESTRADA
+			having ((100*(SUM(CASE when V.CLASSEVEICULO = 1 then 1 else 0 end))/COUNT(PP.NRPASSAGEM)) > 10))
+			order by percentagemPassagensClasse1 desc;
 
 
 

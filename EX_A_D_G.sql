@@ -42,39 +42,23 @@ select c.nome, c.NIF from Cliente c where c.NIF in (select c.NIF
 --+-------------------+------------------------------------------------------------------------------------------------+
 
 
-
-
-select distinct ae1.codautoestrada 
-from Autoestrada ae1 
-where (select COUNT(*) 
-       from RegistoEntrada re 
+select ae1.codautoestrada 
+from Autoestrada ae1, RegistoEntrada re 
       where ae1.codautoestrada = re.codautoestrada              
                   and re.ESTADODISPOSITIVO = 0
                   and re.matriculaveiculo in(select v.matricula from veiculo V)
                   and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= re.dataReg
                   and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= re.dataReg
-      ) > any (select COUNT(*) 
-                  from RegistoEntrada re 
-                  where ae1.codautoestrada <> re.codautoestrada              
-                    and re.ESTADODISPOSITIVO = 0
-                    and re.matriculaveiculo in(select v.matricula from veiculo V)
-                    and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= re.dataReg
-                    and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= re.dataReg
-                    group by re.codautoestrada
-      ) and (select COUNT(*) 
-              from RegistoEntrada re 
-              where ae1.codautoestrada = re.codautoestrada              
-                    and re.ESTADODISPOSITIVO = 0
-                    and re.matriculaveiculo in(select v.matricula from veiculo V)
-                    and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= re.dataReg
-                    and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= re.dataReg
-              ) > any(select COUNT(codautoestrada)
-                      from PassagemPortico pp    
-                      where pp.ESTADODISPOSITIVO = 0
+      group by ae1.codautoestrada having COUNT(*) > (select MAX(COUNT(*)) 
+                      from Autoestrada ae2, PassagemPortico pp    
+                      where 
+                          ae2.codautoestrada <> ae1.codautoestrada
+                          and pp.codautoestrada = ae2.codautoestrada
+                          and pp.ESTADODISPOSITIVO = 0
                           and pp.matriculaveiculo in(select v.matricula from veiculo V)
                           and TO_TIMESTAMP('2017-01-01 00:00:01', 'YYYY-MM-DD HH24:MI:SS') <= pp.datapassagem
                           and TO_TIMESTAMP('2017-10-10 23:59:59', 'YYYY-MM-DD HH24:MI:SS') >= pp.datapassagem
-                          group by codautoestrada                        
+                          group by ae2.codautoestrada                        
 );
                                                                                                                                                                                        
                                                     
