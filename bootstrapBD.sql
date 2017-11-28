@@ -83,6 +83,11 @@ insert into Dispositivo (CLIENTENIF, MATRICULAVEICULO, IBAN, ESTADODISPOSITIVO) 
 insert into TipoPortagem (DESCRICAO) values ('Portico') ;
 insert into TipoPortagem (DESCRICAO) values ('Tradicional') ;
 
+-------------------------
+-- INSERT Sentido--
+-------------------------
+insert into Sentido(id_sentido, descricao) values (1, 'Montante');
+insert into Sentido(id_sentido, descricao) values (2, 'Jusante');
 
 -------------------------
 -- INSERT AUTOESTRADAS --
@@ -251,44 +256,75 @@ insert into TARIFATRADICIONAL (CODAUTOESTRADA, CLASSEVEICULOID, TARIFA) values (
 -- INSERT Portico -- 
 --------------------
 
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A6', 1, 'Portico 1 A6');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A6', 2, 'Portico 2 A6');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A6', 3, 'Portico 3 A6');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A6', 1, 'Portico 1 A6', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A6', 2, 'Portico 2 A6', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A6', 3, 'Portico 3 A6', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A6', 4, 'Portico 4 A6', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A6', 5, 'Portico 5 A6', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A6', 6, 'Portico 6 A6', 2);
 
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A7', 1, 'Portico 1 A7');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A7', 2, 'Portico 2 A7');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A7', 3, 'Portico 3 A7');
 
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A8', 1, 'Portico 1 A8');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A8', 2, 'Portico 2 A8');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A8', 3, 'Portico 3 A8');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A7', 1, 'Portico 1 A7', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A7', 2, 'Portico 2 A7', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A7', 3, 'Portico 3 A7', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A7', 4, 'Portico 4 A7', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A7', 5, 'Portico 5 A7', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A7', 6, 'Portico 6 A7', 2);
 
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A9', 1, 'Portico 1 A9');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A9', 2, 'Portico 2 A9');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A9', 3, 'Portico 3 A9');
 
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A10', 1, 'Portico 1 A10');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A10', 2, 'Portico 2 A10');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A10', 3, 'Portico 3 A10');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A8', 1, 'Portico 1 A8', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A8', 2, 'Portico 2 A8', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A8', 3, 'Portico 3 A8', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A8', 4, 'Portico 4 A8', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A8', 5, 'Portico 5 A8', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A8', 6, 'Portico 6 A8', 2);
 
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A16', 1, 'Portico 1 A16');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A16', 2, 'Portico 2 A16');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A16', 3, 'Portico 3 A16');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A9', 1, 'Portico 1 A9', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A9', 2, 'Portico 2 A9', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A9', 3, 'Portico 3 A9', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A9', 4, 'Portico 4 A9', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A9', 5, 'Portico 5 A9', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A9', 6, 'Portico 6 A9', 2);
 
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A17', 1, 'Portico 1 A17');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A17', 2, 'Portico 2 A17');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A17', 3, 'Portico 3 A17');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A10', 1, 'Portico 1 A10', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A10', 2, 'Portico 2 A10', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A10', 3, 'Portico 3 A10', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A10', 4, 'Portico 4 A10', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A10', 5, 'Portico 5 A10', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A10', 6, 'Portico 6 A10', 2);
 
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A18', 1, 'Portico 1 A18');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A18', 2, 'Portico 2 A18');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A16', 1, 'Portico 1 A16', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A16', 2, 'Portico 2 A16', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A16', 3, 'Portico 3 A16', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A16', 4, 'Portico 4 A16', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A16', 5, 'Portico 5 A16', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A16', 6, 'Portico 6 A16', 2);
 
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A19', 1, 'Portico 1 A19');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A19', 2, 'Portico 2 A19');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A19', 3, 'Portico 3 A19');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A17', 1, 'Portico 1 A17', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A17', 2, 'Portico 2 A17', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A17', 3, 'Portico 3 A17', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A17', 4, 'Portico 4 A17', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A17', 5, 'Portico 5 A17', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A17', 6, 'Portico 6 A17', 2);
 
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A20', 1, 'Portico 1 A20');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A20', 2, 'Portico 2 A20');
-insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO) values('A20', 3, 'Portico 3 A20');
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A18', 1, 'Portico 1 A18', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A18', 2, 'Portico 2 A18', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A18', 3, 'Portico 3 A18', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A18', 4, 'Portico 4 A18', 2);
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A19', 1, 'Portico 1 A19', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A19', 2, 'Portico 2 A19', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A19', 3, 'Portico 3 A19', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A19', 4, 'Portico 4 A19', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A19', 5, 'Portico 5 A19', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A19', 6, 'Portico 6 A19', 2);
+
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A20', 1, 'Portico 1 A20', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A20', 2, 'Portico 2 A20', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A20', 3, 'Portico 3 A20', 1);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A20', 4, 'Portico 4 A20', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A20', 5, 'Portico 5 A20', 2);
+insert into PORTICO (CODAUTOESTRADA, CODPORTICO, DESCRICAO, id_sentido) values('A20', 6, 'Portico 6 A20', 2);
 
 
 

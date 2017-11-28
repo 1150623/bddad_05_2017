@@ -77,6 +77,11 @@ CONSTRAINT tport_pk PRIMARY KEY (idTipo)
 );
 
 
+-- tabela Sentidos
+create table Sentido(
+id_sentido integer(2) NOT NULL,
+descricao varchar(50),
+CONSTRAINT sentido_pk PRIMARY KEY(id_sentido)
 
 
 -- tabela AutoEstrada
@@ -90,14 +95,15 @@ CONSTRAINT autEst_fk_tipoPortagem FOREIGN KEY(tipoPortagem) REFERENCES TipoPorta
 );
 
 
-
 --tabela Portico
 create table Portico(
 codAutoEstrada varchar(3) NOT NULL,
 codPortico number NOT NULL,
 descricao varchar(255),
+id_sentido number NOT NULL, 
 CONSTRAINT port_pk PRIMARY KEY (codPortico, codAutoEstrada),
-CONSTRAINT port_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrada ON DELETE CASCADE
+CONSTRAINT port_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrada ON DELETE CASCADE,
+CONSTRAINT port_fk_sentido FOREIGN KEY(id_sentido) REFERENCES Sentido ON DELETE CASCADE
 );
 
 
@@ -270,6 +276,4 @@ CONSTRAINT cobCTT_pk PRIMARY KEY (matriculaVeiculo, nrPassagem),
 CONSTRAINT cobCTT_fk_veiculo FOREIGN KEY(matriculaVeiculo) REFERENCES Veiculo ON DELETE CASCADE,
 CONSTRAINT cobCTT_fk_autoestrada2 FOREIGN KEY(nrPassagem) REFERENCES PassagemPortico ON DELETE CASCADE
 );
-
-
 
