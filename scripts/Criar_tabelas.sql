@@ -79,10 +79,10 @@ CONSTRAINT tport_pk PRIMARY KEY (idTipo)
 
 -- tabela Sentidos
 create table Sentido(
-id_sentido integer(2) NOT NULL,
+id_sentido number(2) NOT NULL,
 descricao varchar(50),
 CONSTRAINT sentido_pk PRIMARY KEY(id_sentido)
-
+);
 
 -- tabela AutoEstrada
 create table AutoEstrada(
