@@ -14,6 +14,7 @@ nome varchar(255),
 morada varchar(255),
 pontuacaoAcumulada integer,
 pontuacaoSaldo integer,
+data_atualizacao TimeStamp,
 tipoCliente varchar(6) NOT NULL,
 CONSTRAINT cliente_pk PRIMARY KEY (nif),
 CONSTRAINT tipoCliente_fk FOREIGN KEY (tipoCliente) REFERENCES TipoCliente
@@ -139,7 +140,7 @@ CONSTRAINT pass_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrad
 
 -- tabela LinhaPagamentoPassagemPortico
 create table LinhaPagamentoPassagemPortico(
-idPagamento numeric GENERATED ALWAYS AS IDENTITY,
+idPagamento numeric NOT NULL,
 nrSerieDispositivo integer NOT NULL,
 dataEmissao timestamp,
 valorTotal float,
@@ -210,11 +211,10 @@ CONSTRAINT regSaida_fk_autoestrada FOREIGN KEY(codAutoEstrada, codPortTradiciona
 			
 -- tabela LinhaPagamentosPortagensTradicionais
 create table LinhaPagamentosPortagensTradicionais(
-idPagamento numeric GENERATED ALWAYS AS IDENTITY,
+idPagamento numeric NOT NULL,
 nrRegSaida integer NOT NULL,
 nrSerieDispositivo integer NOT NULL,
 valor float,
-dataEmissao TIMESTAMP,
 CONSTRAINT pagPortTrad_pk PRIMARY KEY (idPagamento),
 CONSTRAINT pagPortTrad_fk_regSaida FOREIGN KEY(nrRegSaida) REFERENCES RegistoSaida ON DELETE CASCADE,
 CONSTRAINT pagPortTrad_fk_regMensal FOREIGN KEY(nrSerieDispositivo) REFERENCES Dispositivo ON DELETE CASCADE
