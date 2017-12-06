@@ -3,8 +3,6 @@
 -----------------
 
 
-
-
 -- tabela CobrancaCTT
 drop table CobrancaCTT;
 -- tabela CobrancaFinancas
@@ -33,6 +31,8 @@ drop table TarifaTradicional;
 drop table Portico;
 -- tabela AutoEstrada
 drop table AutoEstrada;
+-- tabela Sentido
+drop table Sentido;
 -- tabela TipoPortagem
 drop table TipoPortagem;
 -- tabela Dispositivo_Veiculo

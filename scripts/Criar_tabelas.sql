@@ -139,7 +139,7 @@ CONSTRAINT pass_fk_autoestrada FOREIGN KEY(codAutoEstrada) REFERENCES AutoEstrad
 
 -- tabela LinhaPagamentoPassagemPortico
 create table LinhaPagamentoPassagemPortico(
-idPagamento numeric NOT NULL,
+idPagamento numeric GENERATED ALWAYS AS IDENTITY,
 nrSerieDispositivo integer NOT NULL,
 dataEmissao timestamp,
 valorTotal float,
@@ -210,10 +210,11 @@ CONSTRAINT regSaida_fk_autoestrada FOREIGN KEY(codAutoEstrada, codPortTradiciona
 			
 -- tabela LinhaPagamentosPortagensTradicionais
 create table LinhaPagamentosPortagensTradicionais(
-idPagamento numeric NOT NULL,
+idPagamento numeric GENERATED ALWAYS AS IDENTITY,
 nrRegSaida integer NOT NULL,
 nrSerieDispositivo integer NOT NULL,
 valor float,
+dataEmissao TIMESTAMP,
 CONSTRAINT pagPortTrad_pk PRIMARY KEY (idPagamento),
 CONSTRAINT pagPortTrad_fk_regSaida FOREIGN KEY(nrRegSaida) REFERENCES RegistoSaida ON DELETE CASCADE,
 CONSTRAINT pagPortTrad_fk_regMensal FOREIGN KEY(nrSerieDispositivo) REFERENCES Dispositivo ON DELETE CASCADE

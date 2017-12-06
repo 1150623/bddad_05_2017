@@ -24,3 +24,4 @@ delete from TAXA;
 delete from TIPOCLIENTE;
 delete from TIPOPORTAGEM;
 delete from VEICULO;
+delete from SENTIDO;
