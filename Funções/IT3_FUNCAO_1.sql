@@ -13,7 +13,7 @@
  -- +---+
 
 
-  create or replace function func_valor_dispositivo(dispositivo_id, ano, mes) 
+  create or replace function func_valor_dispositivo(dispositivo_id DISPOSITIVO.NRSERIE%TYPE, ano, mes) 
   return number	is
   v_taxa	number;
   

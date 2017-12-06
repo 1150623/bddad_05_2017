@@ -257,6 +257,7 @@ create table CobrancaFinancas(
 matriculaVeiculo varchar(8) NOT NULL,
 nrRegSaida integer NOT NULL,
 valor float NOT NULL,
+dataEmissao timestamp,
 situacaoPagamento numeric(1),
 CONSTRAINT cobFin_pk PRIMARY KEY (matriculaVeiculo, nrRegSaida),
 CONSTRAINT cobFin_fk_veiculo FOREIGN KEY(matriculaVeiculo) REFERENCES Veiculo ON DELETE CASCADE,
