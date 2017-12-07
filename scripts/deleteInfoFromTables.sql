@@ -3,6 +3,7 @@
 -- DELETE INFO FROM TABLES --
 -----------------------------
 
+
 delete from AUTOESTRADA;
 delete from CLASSE;
 delete from CLIENTE;
@@ -25,3 +26,5 @@ delete from TIPOCLIENTE;
 delete from TIPOPORTAGEM;
 delete from VEICULO;
 delete from SENTIDO;
+delete from VENDASPORTICO;
+delete from VENDASPORTAGEM;

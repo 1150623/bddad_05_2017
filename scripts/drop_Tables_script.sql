@@ -2,7 +2,10 @@
 -- DROP TABLES --
 -----------------
 
-
+-- tabela VendasPortico
+drop table VendasPortico;
+-- tabela VendasPortagem
+drop table Vendasportagem;
 -- tabela CobrancaCTT
 drop table CobrancaCTT;
 -- tabela CobrancaFinancas

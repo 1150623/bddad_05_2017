@@ -279,3 +279,32 @@ CONSTRAINT cobCTT_fk_veiculo FOREIGN KEY(matriculaVeiculo) REFERENCES Veiculo ON
 CONSTRAINT cobCTT_fk_autoestrada2 FOREIGN KEY(nrPassagem) REFERENCES PassagemPortico ON DELETE CASCADE
 );
 
+
+-- tabela VendasPortico
+create table VendasPortico(
+ano number,
+mes number,
+codAutoestrada varchar2(3),
+codPortico number,
+classeVeiculo integer,
+numPassagens number,
+ValorTotalCobrado float,
+CONSTRAINT vendasportico_pk PRIMARY KEY (ano, mes, codautoestrada, codportico, classeveiculo),
+CONSTRAINT vendasportico_portico_fk FOREIGN KEY (codportico, codautoestrada) REFERENCES PORTICO,
+CONSTRAINT vendasportico_classe_fk FOREIGN KEY (classeVeiculo) REFERENCES Classe
+);
+
+
+-- tabela VendasPortagem
+create table VendasPortagem(
+ano number,
+mes number,
+codAutoestrada varchar2(3),
+codPortagemSaida number, --Tradicional -> RegistoSaida
+classeVeiculo integer,
+numPassagens number,
+ValorTotalCobrado float,
+CONSTRAINT vendasportagem_pk PRIMARY KEY (ano, mes, codautoestrada, codPortagemSaida, classeveiculo),
+CONSTRAINT vendasportagem_portagemtradicional_fk FOREIGN KEY (codautoestrada, codPortagemSaida) REFERENCES PortagemTradicional,
+CONSTRAINT vendasportagem_classe_fk FOREIGN KEY (classeVeiculo) REFERENCES Classe
+);
