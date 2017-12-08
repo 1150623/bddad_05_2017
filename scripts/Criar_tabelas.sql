@@ -319,3 +319,13 @@ debitoMensal number,
 constraint debitoMensal_pk primary key (matricula, ano, mes),
 constraint matricula_fk foreign key (matricula) references Veiculo
 );
+
+
+-- tabela de pontos atribuídos pós-cobrança
+create table LinhasPontos (
+clienteNif number,
+dataPontos timestamp,
+pontos number,
+constraint linhasPontos_pk primary key (clienteNif, dataPontos),
+constraint linhasPontos_fk foreign key (clienteNif) references Cliente
+);
