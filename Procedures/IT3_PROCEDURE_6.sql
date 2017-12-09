@@ -58,12 +58,12 @@ create table VendasPortagem(
 
 
 
-CREATE OR REPLACE PROCEDURE preencheVendasPortico_Portagem AS 
+create or replace PROCEDURE preencheVendasPortico_Portagem AS 
   v_ano number;
   v_mes number;
   v_codAutoestrada AUTOESTRADA.CODAUTOESTRADA%TYPE;
   v_classeVeiculo VEICULO.CLASSEVEICULO%TYPE;
-  v_codPortagemSaida  PORTAGEMTRADICIONAL.CODPORTAGEMTRADICIONAL%TYPE;
+  v_codPortagemSaida  PORTAGEMTRADICIONAL.CODPORTTRADICIONAL%TYPE;
   v_codPortico PORTICO.CODPORTICO%TYPE;
   v_numPassagens number;
   v_valorTotalCobrado float;
@@ -75,29 +75,29 @@ BEGIN
 -- =================================
 
   -- Por cada Autoestrada X
-for ae in Autoestrada
+for ae in (select * from Autoestrada)
   loop
       
        v_codAutoEstrada := ae.codAutoestrada;
        -- Por cada Portico Y de X
-        for port in (select * from Portico p where  ae.codautoestrada = port.codautoestrada)
+        for port in (select p.CODAUTOESTRADA ,p.CODPORTICO from Portico p where  ae.codautoestrada = p.codautoestrada)
         loop
             v_ano:= 0;
             v_mes:= 0;
             v_codPortico := port.codPortico;
            
            -- Encontra as Passagens Z ordenadas por data
-            for pass in (select * from PassagemPortico pp where pp.codPortico = v_codPortico and pp.codAutoestrda = v_codAutoEstrada order by rs.data asc)
+            for pass in (select pp.NRPASSAGEM ,pp.MATRICULAVEICULO ,pp.DATAPASSAGEM  from PassagemPortico pp where pp.codPortico = v_codPortico and pp.codAutoestrada = v_codAutoEstrada order by pp.dataPassagem asc)
             loop
                 
                 -- Enquanto nem o ano nem o mes for alterado, conta as passagens feitas e incrementa o valor cobrado
                 -- Caso contrário estes voltam a zero e recomeça a contagem.
-                if(v_ano <> extract(year from pass.data) or v_mes <> extract(month from pass.data)) 
+                if(v_ano <> extract(year from pass.DATAPASSAGEM) or v_mes <> extract(month from pass.DATAPASSAGEM)) 
                   then 
                   v_ano:= extract(year from pass.dataPassagem);
                   v_mes := extract(month from pass.dataPassagem);
-                  numPassagens:=0;
-                  valorTotalCobrado:=0;
+                  v_numPassagens:=0;
+                  v_valorTotalCobrado:=0;
                 end if;
                         -- Por cada classe de veiculos existente nas Passagens nos porticos Z
                      for cl in (select v.classeVeiculo from Veiculo v where v.matricula in(select pp2.matriculaVeiculo from PassagemPortico pp2 where pp2.codportico = v_codPortico and pp2.codautoestrada = v_codAutoestrada and v_ano = extract(year from pp2.dataPassagem) and v_mes = extract(month from pp2.dataPassagem) ))
@@ -105,7 +105,7 @@ for ae in Autoestrada
                       v_classeVeiculo := cl.classeVeiculo;
                             
                             -- Verifica a Linha de pagamento a fim de obter o valor pago/a pagar        
-                           for line in (select * from LINHAPAGAMENTOPASSAGEMPORTICO lppp where lppp.nrPassagem = pass.nrPassagem and 
+                           for line in (select lppp.VALORTOTAL from LINHAPAGAMENTOPASSAGEMPORTICO lppp where lppp.nrPassagem = pass.nrPassagem and 
                                                                     cl.classeVeiculo = (select v.classeveiculo from Veiculo v, Dispositivo d 
                                                                                                           where d.nr_serie = lppp.nrSerieDispositivo 
                                                                                                                 and v.matricula = getVeiculoDeDispositivo(d.nr_serie, v_ano, v_mes)))
@@ -185,13 +185,6 @@ for ae in Autoestrada
   end loop;
   
 END;
-
-
-
-
-
-
-
 
 
 
