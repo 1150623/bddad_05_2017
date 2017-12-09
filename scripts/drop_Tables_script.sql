@@ -2,6 +2,10 @@
 -- DROP TABLES --
 -----------------
 
+-- tabela DebitoMensal
+drop table DebitoMensal;
+--tabela LinhasPontos
+drop table LinhasPontos;
 -- tabela VendasPortico
 drop table VendasPortico;
 -- tabela VendasPortagem

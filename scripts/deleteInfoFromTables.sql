@@ -28,3 +28,6 @@ delete from VEICULO;
 delete from SENTIDO;
 delete from VENDASPORTICO;
 delete from VENDASPORTAGEM;
+delete from LinhasPontos;
+delete from TipoCliente;
+delete from DebitoMensal;
