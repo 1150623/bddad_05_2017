@@ -57,7 +57,6 @@ create table VendasPortagem(
 */
 
 
-
 create or replace PROCEDURE preencheVendasPortico_Portagem AS 
   v_ano number;
   v_mes number;
@@ -67,27 +66,31 @@ create or replace PROCEDURE preencheVendasPortico_Portagem AS
   v_codPortico PORTICO.CODPORTICO%TYPE;
   v_numPassagens number;
   v_valorTotalCobrado float;
-  incremento float;
+  aux_data timestamp;
+  aux_dias number;
 BEGIN 
 
 -- =================================
 --    INSERT em VendasPortico
 -- =================================
+ dbms_output.put_line('=====================================');
+ dbms_output.put_line('      INSERT em VendasPortico        ');
+ dbms_output.put_line('=====================================');
+
 
   -- Por cada Autoestrada X
-for ae in (select * from Autoestrada)
+for ae in (select * from Autoestrada where Autoestrada.tipoportagem = 1)
   loop
-      
        v_codAutoEstrada := ae.codAutoestrada;
+ 
        -- Por cada Portico Y de X
         for port in (select p.CODAUTOESTRADA ,p.CODPORTICO from Portico p where  ae.codautoestrada = p.codautoestrada)
         loop
             v_ano:= 0;
             v_mes:= 0;
             v_codPortico := port.codPortico;
-           
            -- Encontra as Passagens Z ordenadas por data
-            for pass in (select pp.NRPASSAGEM ,pp.MATRICULAVEICULO ,pp.DATAPASSAGEM  from PassagemPortico pp where pp.codPortico = v_codPortico and pp.codAutoestrada = v_codAutoEstrada order by pp.dataPassagem asc)
+            for pass in (select distinct pp.NRPASSAGEM ,pp.MATRICULAVEICULO ,pp.DATAPASSAGEM  from PassagemPortico pp where pp.codPortico = v_codPortico and pp.codAutoestrada = v_codAutoEstrada order by pp.dataPassagem asc)
             loop
                 
                 -- Enquanto nem o ano nem o mes for alterado, conta as passagens feitas e incrementa o valor cobrado
@@ -98,26 +101,28 @@ for ae in (select * from Autoestrada)
                   v_mes := extract(month from pass.dataPassagem);
                   v_numPassagens:=0;
                   v_valorTotalCobrado:=0;
+                  v_classeVeiculo:=0;
                 end if;
                         -- Por cada classe de veiculos existente nas Passagens nos porticos Z
                      for cl in (select v.classeVeiculo from Veiculo v where v.matricula in(select pp2.matriculaVeiculo from PassagemPortico pp2 where pp2.codportico = v_codPortico and pp2.codautoestrada = v_codAutoestrada and v_ano = extract(year from pp2.dataPassagem) and v_mes = extract(month from pp2.dataPassagem) ))
                      loop
+                     if (v_classeVeiculo < cl.classeVeiculo) then
                       v_classeVeiculo := cl.classeVeiculo;
-                            
+                            aux_dias := numDays(v_mes);
+                            aux_data := TO_TIMESTAMP(v_ano || '-' || v_mes || '-'|| aux_dias || ' 23:59:59', ' YYYY-MM-DD HH24:MI:SS');
                             -- Verifica a Linha de pagamento a fim de obter o valor pago/a pagar        
-                           for line in (select lppp.VALORTOTAL from LINHAPAGAMENTOPASSAGEMPORTICO lppp where lppp.nrPassagem = pass.nrPassagem and 
-                                                                    cl.classeVeiculo = (select v.classeveiculo from Veiculo v, Dispositivo d 
-                                                                                                          where d.nr_serie = lppp.nrSerieDispositivo 
-                                                                                                                and v.matricula = getVeiculoDeDispositivo(d.nr_serie, v_ano, v_mes)))
+                           for line in (select lppp.VALORTOTAL from LINHAPAGAMENTOPASSAGEMPORTICO lppp where  cl.classeVeiculo = (select v.classeveiculo from Veiculo v, Dispositivo d 
+                                                                                                                                                        where d.nr_serie = lppp.nrSerieDispositivo 
+                                                                                                                                                        and v.matricula = getVeiculoDeDispositivo(d.nr_serie, aux_data)))
                            loop
                                       v_numPassagens:=v_numPassagens+1;
                                       v_valorTotalCobrado:= v_valorTotalCobrado + line.valorTotal;
-                                      
-                           end loop;
+                          end loop;
+                           
                       -- Insere na tabela os valores
                       insert into VendasPortico (ano,    mes,    codAutoestrada,   codPortico ,  classeVeiculo,      numPassagens,     ValorTotalCobrado) 
                                         values  (v_ano,  v_mes,  v_codautoestrada, v_codPortico, v_classeVeiculo,    v_numPassagens,   v_ValorTotalCobrado);
-                                                
+                         end if;                       
                       end loop;
 
             end loop;
@@ -126,26 +131,23 @@ for ae in (select * from Autoestrada)
         
   end loop;
   
-  
-  
 -- =================================
 --    INSERT em VendasPortagem
 -- =================================
 
   -- Por cada Autoestrada X
-for ae in Autoestrada
+for ae in (select * from Autoestrada where Autoestrada.tipoportagem = 2)
   loop
       
        v_codAutoEstrada := ae.codAutoestrada;
        -- Por cada PortagemTradicional Y de X
-        for port in (select * from PortagemTradicional pt where  ae.codautoestrada = port.codautoestrada)
+        for port in (select distinct * from PortagemTradicional pt where  ae.codautoestrada = pt.codautoestrada)
         loop
             v_ano:= 0;
             v_mes:= 0;
             v_codPortagemSaida := port.codPortTradicional;
-           
            -- Encontra os registos de Saida Z e ordenados por data
-            for regSaida in (select * from RegistoSaida rs where rs.codPortTradicional = v_portagemSaida and rs.codAutoestrda = v_codAutoEstrada order by rs.data asc)
+            for regSaida in (select distinct * from RegistoSaida rs where rs.codPortTradicional = v_codPortagemSaida and rs.codAutoestrada = v_codAutoEstrada order by rs.data asc)
             loop
                 
                 -- Enquanto nem o ano nem o mes for alterado, conta as passagens feitas e incrementa o valor cobrado
@@ -154,19 +156,21 @@ for ae in Autoestrada
                   then 
                   v_ano:= extract(year from regSaida.data);
                   v_mes := extract(month from regSaida.data);
-                  numPassagens:=0;
-                  valorTotalCobrado:=0;
+                  v_numPassagens:=0;
+                  v_valorTotalCobrado:=0;
+                   v_classeVeiculo:=0;
                 end if;
                         -- Por cada classe de veiculos existente no Resgito de Saida Z
-                     for cl in (select v.classeVeiculo from Veiculo v where v.matricula in(select reg2.matriculaVeiculo from RegistoSaida reg2 where reg2.codporttradicional = v_codPortagemSaida and reg2.codautoestrada = v_codAutoestrada and v_ano = extract(year from reg2.data) and v_mes = extract(month from reg2.data) ))
+                     for cl in (select distinct v.classeVeiculo from Veiculo v where v.matricula in(select reg2.matriculaVeiculo from RegistoSaida reg2 where reg2.codporttradicional = v_codPortagemSaida and reg2.codautoestrada = v_codAutoestrada and v_ano = extract(year from reg2.data) and v_mes = extract(month from reg2.data) ))
                       loop
-                      v_classeVeiculo := cl.classeVeiculo;
-                            
+                      if(v_classeVeiculo < cl.classeVeiculo) then -- evitar repetir classes
+                        v_classeVeiculo := cl.classeVeiculo;
+                            aux_dias := numDays(v_mes);
+                            aux_data := TO_TIMESTAMP(v_ano || '-' || v_mes || '-'|| aux_dias || ' 23:59:59', 'YYYY-MM-DD HH24:MI:SS');
                             -- Verifica a Linha de pagamento a fim de obter o valor pago/a pagar        
-                           for line in (select * from LinhaPagamentosPortagensTradicionais lppt where lppt.nrRegSaida = pass.nrRegistoSaida and 
-                                                                    cl.classeVeiculo = (select v.classeveiculo from Veiculo v, Dispositivo d 
+                           for line in (select * from LinhaPagamentosPortagensTradicionais lppt where cl.classeVeiculo = (select v.classeveiculo from Veiculo v, Dispositivo d 
                                                                                                           where d.nr_serie = lppt.nrSerieDispositivo 
-                                                                                                                and v.matricula = getVeiculoDeDispositivo(d.nr_serie, v_ano, v_mes)))
+                                                                                                                and v.matricula = getVeiculoDeDispositivo(d.nr_serie, aux_data)))
                            loop
                                       v_numPassagens:=v_numPassagens+1;
                                       v_valorTotalCobrado:= v_valorTotalCobrado + line.valor;
@@ -175,7 +179,8 @@ for ae in Autoestrada
                         -- Insere na tabela os valores
                         insert into VendasPortagem (ano,    mes,    codAutoestrada,   codPortagemSaida ,  classeVeiculo,      numPassagens,     ValorTotalCobrado) 
                                                 values  (v_ano,   v_mes,  v_codautoestrada, v_codPortagemSaida,       v_classeVeiculo,    v_numPassagens,   v_ValorTotalCobrado);
-                                                
+                       
+                       end if;                         
                       end loop;
 
             end loop;
@@ -185,8 +190,3 @@ for ae in Autoestrada
   end loop;
   
 END;
-
-
-
-
-
