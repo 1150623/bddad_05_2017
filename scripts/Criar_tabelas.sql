@@ -308,3 +308,24 @@ CONSTRAINT vendasportagem_pk PRIMARY KEY (ano, mes, codautoestrada, codPortagemS
 CONSTRAINT vendasportagem_portagemtradicional_fk FOREIGN KEY (codautoestrada, codPortagemSaida) REFERENCES PortagemTradicional,
 CONSTRAINT vendasportagem_classe_fk FOREIGN KEY (classeVeiculo) REFERENCES Classe
 );
+
+
+-- tabela de débitos mensais por veículo
+create table DebitoMensal(
+matricula varchar(8) NOT NULL,
+ano number,
+mes number,
+debitoMensal number,
+constraint debitoMensal_pk primary key (matricula, ano, mes),
+constraint matricula_fk foreign key (matricula) references Veiculo
+);
+
+
+-- tabela de pontos atribuídos pós-cobrança
+create table LinhasPontos (
+clienteNif number,
+dataPontos timestamp,
+pontos number,
+constraint linhasPontos_pk primary key (clienteNif, dataPontos),
+constraint linhasPontos_fk foreign key (clienteNif) references Cliente
+);
