@@ -9,7 +9,7 @@ begin
   
   select COUNT(*) into contagem
       from dispositivo_veiculo DV 
-      where   dv.matriculaveiculo=v_matricula 
+      where   dv.nrserieDispositivo=disp 
               and dv.infodata<=v_data;
               
   if(contagem=0)
@@ -20,7 +20,7 @@ begin
   select matriculaveiculo into v_matricula
   from (select matriculaveiculo
           from dispositivo_veiculo dv 
-              where   dv.matriculaveiculo=v_matricula 
+              where    dv.nrserieDispositivo=disp 
                       and dv.infodata<=v_data 
                       order by dv.infodata 
                       desc) 
