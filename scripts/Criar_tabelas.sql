@@ -157,6 +157,7 @@ codAutoEstrada varchar(3) NOT NULL,
 codPortico integer NOT NULL,
 classeVeiculo integer  NOT NULL,
 taxa float,
+pontosAtribuidos number,
 CONSTRAINT tax_pk PRIMARY KEY (codAutoEstrada, codPortico, classeVeiculo),
 CONSTRAINT tax_fk_classeVeiculo FOREIGN KEY(classeVeiculo) REFERENCES Classe ON DELETE CASCADE,
 CONSTRAINT tax_fk_portico FOREIGN KEY(codPortico, codAutoEstrada) REFERENCES Portico ON DELETE CASCADE
